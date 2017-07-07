@@ -49,7 +49,7 @@ use pocketmine\utils\TextFormat;
 
 class BedWars extends PluginBase implements Listener {
 
-    public $prefix = TextFormat::GRAY."[".TextFormat::DARK_AQUA."Bedwars".TextFormat::GRAY."]".TextFormat::WHITE." ";
+    public $prefix = TextFormat::GRAY."[".TextFormat::DARK_AQUA."BedWars".TextFormat::GRAY."]".TextFormat::WHITE." ";
     public $registerSign = false;
     public $registerSignWHO = "";
     public $registerSignArena = "Arena1";
