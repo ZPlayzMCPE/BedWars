@@ -47,7 +47,7 @@ use pocketmine\tile\Tile;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 
-class Bedwars extends PluginBase implements Listener {
+class BedWars extends PluginBase implements Listener {
 
     public $prefix = TextFormat::GRAY."[".TextFormat::DARK_AQUA."Bedwars".TextFormat::GRAY."]".TextFormat::WHITE." ";
     public $registerSign = false;
