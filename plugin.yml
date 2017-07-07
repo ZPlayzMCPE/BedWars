@@ -1,6 +1,6 @@
 name: Bedwars
-version: bugs_test_ver
-api: 1.14.0
+version: 1.0.0-BETA
+api: 3.0.0-ALPHA6
 main: Bluplayz\BedWars
 author: NetherTechnology
 commands:
