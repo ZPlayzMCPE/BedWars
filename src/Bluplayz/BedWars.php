@@ -233,7 +233,8 @@ class BedWars extends PluginBase implements Listener {
     ############################################################################################################
     ############################################################################################################
     ############################################################################################################
-      public function copymap($source, $target){
+	
+        public function copymap($source, $target){
     $directory = opendir($source);
     @mkdir($target);
     while (false !== ($file = readdir($directory))){
@@ -241,7 +242,13 @@ class BedWars extends PluginBase implements Listener {
         if (is_dir($source.'/'.$file)) {
           $this->copymap($source.'/'.$file, $target.'/'.$file);
         } else {
-          Bluplayz\copymap()
+          copymap($source.'/'.$file, $target.'/'.$file);
+        }
+      }
+    }
+    closedir($directory);
+  }
+
 
     public function getTeams($arena){
         $config = new Config($this->getDataFolder()."Arenas/".$arena.".yml", Config::YAML);
@@ -1640,7 +1647,7 @@ class BWGameSender extends PluginTask {
 
     public function onRun($tick) {
 
-        $files = scandir($this->plugin->getDataFolder()."Arenas");
+        $files = scandir($this->plugin->getDataFolder()."Arenas/");
         foreach($files as $filename){
             if($filename != "." && $filename != ".."){
                 $arena = str_replace(".yml", "", $filename);
