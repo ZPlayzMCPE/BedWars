@@ -47,7 +47,7 @@ use pocketmine\tile\Tile;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 
-class Bedwars extends PluginBase implements Listener {
+class BedWars extends PluginBase implements Listener {
 
     public $prefix = TextFormat::GRAY."[".TextFormat::DARK_AQUA."Bedwars".TextFormat::GRAY."]".TextFormat::WHITE." ";
     public $registerSign = false;
@@ -467,7 +467,7 @@ class Bedwars extends PluginBase implements Listener {
             if($level instanceof Level){
                 $this->getServer()->unloadLevel($level);
             }
-            $this->copymap($this->getDataFolder() . "Maps/" . $levelname, $this->getServer()->getDataPath() . "worlds/" . $levelname);
+            $this->copy($this->getDataFolder() . "Maps/" . $levelname, $this->getServer()->getDataPath() . "worlds/" . $levelname);
             $this->getServer()->loadLevel($levelname);
         }
     }
