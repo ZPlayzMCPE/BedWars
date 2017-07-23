@@ -233,15 +233,15 @@ class BedWars extends PluginBase implements Listener {
     ############################################################################################################
     ############################################################################################################
     ############################################################################################################
-      public function copy($source, $target){
+      public function copymap($source, $target){
     $directory = opendir($source);
     @mkdir($target);
     while (false !== ($file = readdir($directory))){
       if ($file != "." && $file != "..") {
         if (is_dir($source.'/'.$file)) {
-          $this->copy($source.'/'.$file, $target.'/'.$file);
+          $this->copymap($source.'/'.$file, $target.'/'.$file);
         } else {
-          copy($source.'/'.$file, $target.'/'.$file);
+          copymap($source.'/'.$file, $target.'/'.$file);
         }
       }
     }
@@ -467,7 +467,7 @@ class BedWars extends PluginBase implements Listener {
             if($level instanceof Level){
                 $this->getServer()->unloadLevel($level);
             }
-            $this->copy($this->getDataFolder() . "Maps/" . $levelname, $this->getServer()->getDataPath() . "worlds/" . $levelname);
+            $this->copymap($this->getDataFolder() . "Maps/" . $levelname, $this->getServer()->getDataPath() . "worlds/" . $levelname);
             $this->getServer()->loadLevel($levelname);
         }
     }
@@ -475,7 +475,7 @@ class BedWars extends PluginBase implements Listener {
         $levels = $this->getArenaWorlds($arena);
         foreach($levels as $levelname){
             $level = $this->getServer()->getLevelByName($levelname);
-            $this->copy($this->getServer()->getDataPath() . "worlds/" . $levelname, $this->getDataFolder() . "Maps/" . $levelname);
+            $this->copymap($this->getServer()->getDataPath() . "worlds/" . $levelname, $this->getDataFolder() . "Maps/" . $levelname);
         }
     }
     public function getFigthWorld($arena){
