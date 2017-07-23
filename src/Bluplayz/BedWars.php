@@ -71,10 +71,10 @@ class BedWars extends PluginBase implements Listener {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info($this->prefix.TextFormat::GREEN."BedWars plugin by NetherTechnology loaded!");
         @mkdir($this->getDataFolder());
-        @mkdir($this->getDataFolder()."Arenas");
-        @mkdir($this->getDataFolder()."Maps");
+        @mkdir($this->getDataFolder()."Arenas/");
+        @mkdir($this->getDataFolder()."Maps/");
 
-        $files = scandir($this->getDataFolder()."Arenas");
+        $files = scandir($this->getDataFolder()."Arenas/");
         foreach($files as $filename){
             if($filename != "." && $filename != ".."){
                 $filename = str_replace(".yml", "", $filename);
