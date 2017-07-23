@@ -475,7 +475,7 @@ class Bedwars extends PluginBase implements Listener {
         $levels = $this->getArenaWorlds($arena);
         foreach($levels as $levelname){
             $level = $this->getServer()->getLevelByName($levelname);
-            $this->copymap($this->getServer()->getDataPath() . "worlds/" . $levelname, $this->getDataFolder() . "Maps/" . $levelname);
+            $this->copy($this->getServer()->getDataPath() . "worlds/" . $levelname, $this->getDataFolder() . "Maps/" . $levelname);
         }
     }
     public function getFigthWorld($arena){
