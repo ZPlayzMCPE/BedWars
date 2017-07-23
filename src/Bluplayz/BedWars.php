@@ -242,7 +242,7 @@ class BedWars extends PluginBase implements Listener {
         if (is_dir($source.'/'.$file)) {
           $this->copymap($source.'/'.$file, $target.'/'.$file);
         } else {
-          copymap($source.'/'.$file, $target.'/'.$file);
+          copy($source.'/'.$file, $target.'/'.$file);
         }
       }
     }
