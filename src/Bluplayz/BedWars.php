@@ -233,20 +233,21 @@ class Bedwars extends PluginBase implements Listener {
     ############################################################################################################
     ############################################################################################################
     ############################################################################################################
-    public function copymap($src, $dst) {
-        $dir = opendir($src);
-        @mkdir($dst);
-        while (false !== ( $file = readdir($dir))) {
-            if (( $file != '.' ) && ( $file != '..' )) {
-                if (is_dir($src . '/' . $file)) {
-                    $this->copymap($src . '/' . $file, $dst . '/' . $file);
-                } else {
-                    copy($src . '/' . $file, $dst . '/' . $file);
-                }
-            }
+      public function copy($source, $target){
+    $directory = opendir($source);
+    @mkdir($target);
+    while (false !== ($file = readdir($directory))){
+      if ($file != "." && $file != "..") {
+        if (is_dir($source.'/'.$file)) {
+          $this->copy($source.'/'.$file, $target.'/'.$file);
+        } else {
+          copy($source.'/'.$file, $target.'/'.$file);
         }
-        closedir($dir);
+      }
     }
+    closedir($directory);
+  }
+
     public function getTeams($arena){
         $config = new Config($this->getDataFolder()."Arenas/".$arena.".yml", Config::YAML);
         $array = array();
