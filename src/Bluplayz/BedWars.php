@@ -242,11 +242,6 @@ class BedWars extends PluginBase implements Listener {
           $this->copymap($source.'/'.$file, $target.'/'.$file);
         } else {
           Bluplayz\copymap()
-        }
-      }
-    }
-    closedir($directory);
-  }
 
     public function getTeams($arena){
         $config = new Config($this->getDataFolder()."Arenas/".$arena.".yml", Config::YAML);
