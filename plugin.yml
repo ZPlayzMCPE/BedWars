@@ -1,6 +1,6 @@
 name: Bedwars
-version: 4.0.2
-api: 1.14.0
+version: 4.0.3
+api: [3.0.0-ALPHA6, 3.0.1]
 main: Bluplayz\BedWars
 author: NetherTechnology
 commands:
