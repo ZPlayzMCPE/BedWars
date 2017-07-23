@@ -533,7 +533,7 @@ class BedWars extends PluginBase implements Listener {
         $config->save();
     }
     public function arenaExists($arena){
-        $files = scandir($this->getDataFolder()."Arenas");
+        $files = scandir($this->getDataFolder()."Arenas/");
         foreach($files as $filename){
             if($filename != "." && $filename != ".."){
                 $filename = str_replace(".yml", "", $filename);
@@ -610,7 +610,7 @@ class BedWars extends PluginBase implements Listener {
         $config->save();
     }
     public function getArena(Player $p){
-        $files = scandir($this->getDataFolder()."Arenas");
+        $files = scandir($this->getDataFolder()."Arenas/");
         foreach($files as $filename){
             if($filename != "." && $filename != ".."){
                 $arena = str_replace(".yml", "", $filename);
@@ -624,7 +624,7 @@ class BedWars extends PluginBase implements Listener {
         return "-";
     }
     public function inArena(Player $p){
-        $files = scandir($this->getDataFolder()."Arenas");
+        $files = scandir($this->getDataFolder()."Arenas/");
         foreach($files as $filename){
             if($filename != "." && $filename != ".."){
                 $arena = str_replace(".yml", "", $filename);
