@@ -1393,7 +1393,7 @@ class BedWars extends PluginBase implements Listener {
     ############################################################################################################
     ############################################################################################################
 
-    public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool{
 
         $name = $sender->getName();
         if($cmd->getName() == "Start" && $sender->hasPermission("bw.forcestart")){
@@ -1414,13 +1414,13 @@ class BedWars extends PluginBase implements Listener {
             if(!empty($args[0])){
                 if(strtolower($args[0]) == "help" && $sender->isOP()){
                     $sender->sendMessage(TextFormat::GRAY."===============");
-                    $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw help ".TextFormat::GRAY."[".TextFormat::RED."Displays all Bedwars Commands".TextFormat::GRAY."]");
-                    $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw regsign <Arena> ".TextFormat::GRAY."[".TextFormat::RED."Register a sign for a arena".TextFormat::GRAY."]");
-                    $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw savemaps <Arena> ".TextFormat::GRAY."[".TextFormat::RED."Secures all the worlds of an arena".TextFormat::GRAY."]");
-                    $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw addarena <ArenaName> <Teams> <SpielerProTeam> ".TextFormat::GRAY."[".TextFormat::RED."Add a new arena".TextFormat::GRAY."]");
-                    $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw setlobby <Arena>".TextFormat::GRAY."[".TextFormat::RED."Set The Arena lobby".TextFormat::GRAY."]");
-                    $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw setspawn <Arena> <Team>".TextFormat::GRAY."[".TextFormat::RED."Sets the team spawns".TextFormat::GRAY."]");
-                    $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw setbed <Arena> <Team>".TextFormat::GRAY."[".TextFormat::RED."Sets the team beds".TextFormat::GRAY."]");
+                    $sender->sendMessage(TextFormat::GRAY.">".TextFormat::DARK_AQUA."/bw help ".TextFormat::GRAY."[".TextFormat::RED."Displays all Bedwars Commands".TextFormat::GRAY."]");
+                    $sender->sendMessage(TextFormat::GRAY."> ".TextFormat::DARK_AQUA."/bw regsign <Arena> ".TextFormat::GRAY."[".TextFormat::RED."Register a sign for a arena".TextFormat::GRAY."]");
+                    $sender->sendMessage(TextFormat::GRAY.">".TextFormat::DARK_AQUA."/bw savemaps <Arena> ".TextFormat::GRAY."[".TextFormat::RED."Secures all the worlds of an arena".TextFormat::GRAY."]");
+                    $sender->sendMessage(TextFormat::GRAY.">".TextFormat::DARK_AQUA."/bw addarena <ArenaName> <Teams> <SpielerProTeam> ".TextFormat::GRAY."[".TextFormat::RED."Add a new arena".TextFormat::GRAY."]");
+                    $sender->sendMessage(TextFormat::GRAY.">".TextFormat::DARK_AQUA."/bw setlobby <Arena>".TextFormat::GRAY."[".TextFormat::RED."Set The Arena lobby".TextFormat::GRAY."]");
+                    $sender->sendMessage(TextFormat::GRAY.">".TextFormat::DARK_AQUA."/bw setspawn <Arena> <Team>".TextFormat::GRAY."[".TextFormat::RED."Sets the team spawns".TextFormat::GRAY."]");
+                    $sender->sendMessage(TextFormat::GRAY.">".TextFormat::DARK_AQUA."/bw setbed <Arena> <Team>".TextFormat::GRAY."[".TextFormat::RED."Sets the team beds".TextFormat::GRAY."]");
                     $sender->sendMessage(TextFormat::GRAY."===============");
                 }
                 elseif(strtolower($args[0]) == "regsign" && $sender->isOP()){
